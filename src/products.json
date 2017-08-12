@@ -1,0 +1,17 @@
+{
+  "ftb4l9": {
+    "name": "Football",
+    "price": 3.50,
+    "tax": 0.07
+  },
+  "bo7ts0": {
+    "name": "Boots",
+    "price": 12.00,
+    "tax": 0.19
+  },
+  "puD93f": {
+    "name": "Pump",
+    "price": 6.00,
+    "tax": 0.19
+  }
+}

@@ -1,0 +1,7 @@
+.lists-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  text-align: left;
+}
