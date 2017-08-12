@@ -50,7 +50,7 @@ CartTotals.propTypes = {
   meta: PropTypes.object.isRequired
 }
 
-const mapStateToProps = ({cartReducer: state}) => {
+const mapStateToProps = ({entryReducer: state}) => {
   return {
     products: state.cart.products,
     meta: state.cart.meta

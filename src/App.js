@@ -12,7 +12,7 @@ class App extends Component {
         <div className="App">
 
           <div className="App-header">
-            <h2>Kreatize Cart</h2>
+            <h2>LensShift Cart</h2>
           </div>
           
           <CartContainer />

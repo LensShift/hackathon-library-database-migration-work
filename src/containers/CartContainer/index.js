@@ -6,7 +6,7 @@ import _ from 'lodash';
 import db from '../../products.json';
 import { addProduct } from '../../actions';
 
-import ProductsTable from '../ProductsTable';
+import EntryTable from '../EntryTable';
 import CartTotals from '../CartTotals';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -17,7 +17,7 @@ class CartContainer extends Component {
     return (
       <div>
 
-        <ProductsTable />
+        <EntryTable />
 
         <CartTotals />
 
@@ -44,7 +44,7 @@ CartContainer.propTypes = {
   products: PropTypes.object.isRequired
 }
 
-const mapStateToProps = ({ cartReducer: state }) => {
+const mapStateToProps = ({ entryReducer: state }) => {
   return {
     products: state.cart.products
   }

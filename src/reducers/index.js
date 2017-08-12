@@ -6,7 +6,7 @@ import * as types from '../types';
 import db from '../products.json';
 
 export const initialState = {
-  cartReducer: {
+  entryReducer: {
     cart: {
       products: {},
       meta: {}
@@ -24,7 +24,7 @@ function generateProductMeta () {
   };
 }
 
-export function cartReducer(state = initialState, action = {}) {
+export function entryReducer(state = initialState, action = {}) {
   // action.payload = "<product-id>"
   const id = action.payload;
   let cart = state.cart;
@@ -33,7 +33,7 @@ export function cartReducer(state = initialState, action = {}) {
 
   switch (action.type) {
     case types.ADD_PRODUCT:
-      console.info('cartReducer: Add product', action);
+      console.info('entryReducer: Add product', action);
       // assumes product is not in cart already
       const newProduct = _.cloneDeep(db[id]); // product object must be a fresh js object
       products = _.assign({}, cart.products, {[id]: newProduct});
@@ -42,7 +42,7 @@ export function cartReducer(state = initialState, action = {}) {
       return { cart };
 
     case types.REMOVE_PRODUCT:
-      console.info('cartReducer: Remove product', action);
+      console.info('entryReducer: Remove product', action);
       // assumes product is in the cart
 
       // create new object omitting product to be removed
@@ -58,7 +58,7 @@ export function cartReducer(state = initialState, action = {}) {
 
 const reducer = combineReducers({
   firebase: firebaseStateReducer,
-  cartReducer
+  entryReducer
 });
 
 export default reducer;
