@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import CartContainer from './containers/CartContainer';
+import MainContainer from './containers/MainContainer';
 
 import './App.css';
 
@@ -12,10 +12,10 @@ class App extends Component {
         <div className="App">
 
           <div className="App-header">
-            <h2>LensShift Cart</h2>
+            <h2>LensShift Library</h2>
           </div>
           
-          <CartContainer />
+          <MainContainer />
 
         </div>
       </MuiThemeProvider>

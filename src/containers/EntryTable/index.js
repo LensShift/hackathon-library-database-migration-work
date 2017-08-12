@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import { removeProduct } from '../../actions';
+import { removeEntry } from '../../actions';
 
 import {
   Table,
@@ -38,7 +38,7 @@ const EntryTable = (props) => (
           <TableRowColumn><Euro value={price} /></TableRowColumn>
           <TableRowColumn><Percent value={tax} /></TableRowColumn>
           <TableRowColumn>{props.meta[id].quantity}</TableRowColumn>
-          <TableRowColumn><FlatButton label="Remove" secondary onClick={() => props.removeProduct(id)}/></TableRowColumn>
+          <TableRowColumn><FlatButton label="Remove" secondary onClick={() => props.removeEntry(id)}/></TableRowColumn>
         </TableRow>
       ))}
     </TableBody>
@@ -57,4 +57,4 @@ const mapStateToProps = ({entryReducer: state}) => {
   }
 }
 
-export default connect(mapStateToProps, { removeProduct })(EntryTable);
+export default connect(mapStateToProps, { removeEntry })(EntryTable);

@@ -4,7 +4,7 @@
 ```
 |store ->
 |App
-    | CartContainer |
+    | MainContainer |
         | >Table |
             |Header|
             .map(..) --> |Row|, |Row|, |Row|

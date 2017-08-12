@@ -14,7 +14,7 @@ test('store is unchanged by empty action', () => {
 
 function addRandomProductToState (state) {
   const productId = chooseRandomKey(db);
-  const stateAfterAdd = reducer(state, actions.addProduct(productId));
+  const stateAfterAdd = reducer(state, actions.addEntry(productId));
   return {
     stateAfterAdd,
     productId
@@ -52,7 +52,7 @@ describe('add product', () => {
 test('removed products are not in state', () => {
   const state1 = reducer(initialState);
   const { stateAfterAdd, productId } = addRandomProductToState(state1);
-  const stateAfterRemove = reducer(stateAfterAdd, actions.removeProduct(productId));
+  const stateAfterRemove = reducer(stateAfterAdd, actions.removeEntry(productId));
   const { products, meta } = stateAfterRemove.cart;
 
   expect(products).not.toHaveProperty(productId);

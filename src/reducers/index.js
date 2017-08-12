@@ -32,7 +32,7 @@ export function entryReducer(state = initialState, action = {}) {
   let meta;
 
   switch (action.type) {
-    case types.ADD_PRODUCT:
+    case types.ADD_ENTRY:
       console.info('entryReducer: Add product', action);
       // assumes product is not in cart already
       const newProduct = _.cloneDeep(db[id]); // product object must be a fresh js object
@@ -41,7 +41,7 @@ export function entryReducer(state = initialState, action = {}) {
       cart = _.assign({}, cart, { products, meta });
       return { cart };
 
-    case types.REMOVE_PRODUCT:
+    case types.REMOVE_ENTRY:
       console.info('entryReducer: Remove product', action);
       // assumes product is in the cart
 

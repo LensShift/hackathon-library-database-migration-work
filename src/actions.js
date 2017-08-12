@@ -1,11 +1,11 @@
 import * as types from './types';
 
-export const addProduct = (id) => ({ 
-  type: types.ADD_PRODUCT,
+export const addEntry = (id) => ({ 
+  type: types.ADD_ENTRY,
   payload: id
 });
 
-export const removeProduct = (id) => ({ 
-  type: types.REMOVE_PRODUCT,
+export const removeEntry = (id) => ({ 
+  type: types.REMOVE_ENTRY,
   payload: id
 });
