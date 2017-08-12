@@ -44,7 +44,7 @@ CartContainer.propTypes = {
   products: PropTypes.object.isRequired
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ cartReducer: state }) => {
   return {
     products: state.cart.products
   }

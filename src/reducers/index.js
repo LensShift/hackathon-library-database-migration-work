@@ -1,14 +1,20 @@
 import _ from 'lodash';
+import { combineReducers } from 'redux';
+import { firebaseStateReducer } from 'react-redux-firebase'
 
 import * as types from '../types';
 import db from '../products.json';
 
 export const initialState = {
-  cart: {
-    products: {},
-    meta: {}
-  }
+  cartReducer: {
+    cart: {
+      products: {},
+      meta: {}
+    }
+  },
+  firebase: null
 };
+
 
 function generateProductMeta () {
   return {
@@ -50,6 +56,9 @@ export function cartReducer(state = initialState, action = {}) {
   }
 }
 
-const reducer = cartReducer // combineReducers({  });
+const reducer = combineReducers({
+  firebase: firebaseStateReducer,
+  cartReducer
+});
 
 export default reducer;
