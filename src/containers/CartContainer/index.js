@@ -48,6 +48,6 @@ const mapStateToProps = ({ cartReducer: state }) => {
   return {
     products: state.cart.products
   }
-}
+};
 
 export default connect(mapStateToProps, { addProduct })(CartContainer);
