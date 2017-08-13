@@ -4,6 +4,7 @@ import { firebaseConnect, isLoaded, isEmpty, dataToJS } from 'react-redux-fireba
 import _ from 'lodash';
 
 import ResourceItem from '../../components/ResourceItem';
+import FlexList from '../../components/FlexList';
 
 class Todos extends Component {
   render() {
@@ -15,18 +16,24 @@ class Todos extends Component {
       ? 'Loading'
       : isEmpty(resources)
         ? 'resource list is empty'
-        : Object.keys(resources).map(
+        : _.map(Object.keys(resources),
             (key) => (
               <ResourceItem key={key} id={key} resource={resources[key]}/>
             )
           )
+    const dummyKey = isLoaded(resources)
+      ? Object.keys(resources)[0]
+      : null
+    if (dummyKey) {
+      resourcesList.push(<ResourceItem key={Math.random().toString()} id={dummyKey} resource={resources[dummyKey]}/>);
+    }
 
     return (
       <div>
         <h1>Todos</h1>
-        <div>
+        <FlexList>
           {resourcesList}
-        </div>
+        </FlexList>
         <input type="text" ref="newTodo" />
         <button onClick={this.handleAdd}>
           Add

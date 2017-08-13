@@ -1,0 +1,5 @@
+.FlexList {
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+}
