@@ -31,14 +31,11 @@ class Todos extends Component {
 
     return (
       <div>
-        <h1>Todos</h1>
+        <h1>Resources</h1>
         <FlexList>
           {resourcesList}
         </FlexList>
         <input type="text" ref="newTodo" />
-        <button onClick={this.handleAdd}>
-          Add
-        </button>
       </div>
     )
   }
