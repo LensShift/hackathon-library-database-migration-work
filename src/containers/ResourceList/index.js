@@ -26,6 +26,7 @@ class Todos extends Component {
       : null
     if (dummyKey) {
       resourcesList.push(<ResourceItem key={Math.random().toString()} id={dummyKey} resource={resources[dummyKey]}/>);
+      resourcesList.push(<ResourceItem key={Math.random().toString()} id={dummyKey} resource={resources[dummyKey]}/>);
     }
 
     return (

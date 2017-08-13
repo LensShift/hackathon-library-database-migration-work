@@ -1,5 +1,8 @@
 .FlexList {
   display: flex;
+  flex-flow: row wrap;
+
   overflow: hidden;
+
   text-align: left;
 }
